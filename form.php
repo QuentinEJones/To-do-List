@@ -27,44 +27,28 @@
       </div>
       <div class="col-md-6">
         <label for="Catagory" class="form-label">Tasks Catagory</label>
-          <select id="inputState" class="form-select">
-            <option>Choose One</option>
-            <option>HomeWork</option>
-            <option>HouseWork</option>
+         <select name="Catagory" class="form-select">
+          <option selected>Choose</option>
+          <option>Events </option>
+          <option>HomeWork </option>
+          <option>Chores </option>
+         </select>
       </div>
       <div class="col-12">
-        <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St">
+        <label for="Project" class="form-label">Project Type</label>
+        <input type="text" class="form-control" name="inputAddress" placeholder="HW Type/ Where / What chore">
       </div>
       <div class="col-12">
-        <label for="inputAddress2" class="form-label">Address 2</label>
-        <input type="text" class="form-control" name="inputAddress2" placeholder="Apartment, studio, or floor">
+        <label for="time" class="form-label">Required Time</label>
+        <input type="text" class="form-control" name="time" placeholder="How much time will it take">
       </div>
       <div class="col-md-6">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" name="inputCity">
+        <label for="inputCity" class="form-label">Reward/Cost</label>
+        <input type="text" class="form-control" name="reward">
       </div>
-      <div class="col-md-4">
-        <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
+      
       <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary">Done</button>
       </div>
     </form>
                           
