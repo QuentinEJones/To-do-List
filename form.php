@@ -22,7 +22,7 @@
             <!-- From Code-->
              <form class="row g-3">
       <div class="col-md-6">
-        <label for="Title" class="form-label">Email</label>
+        <label for="Title" class="form-label">User</label>
         <input type="text" class="form-control" name="inputEmail4">
       </div>
       <div class="col-md-6">
@@ -33,6 +33,15 @@
           <option>HomeWork </option>
           <option>Chores </option>
          </select>
+      </div>
+     <div class="col-md-6">
+        <label for="Title" class="form-label">User</label>
+        <input type="text" class="form-control" name="inputEmail4">
+      </div>
+      <div class="col-md-6">
+        <label for="Catagory" class="form-label">Tasks Due Date</label>
+         <br>
+        <input type="date">
       </div>
       <div class="col-12">
         <label for="Project" class="form-label">Project Type</label>
@@ -48,7 +57,7 @@
       </div>
       
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Done</button>
+        <button type="submit" action="/data/tasks.json" class="btn btn-primary">Done</button>
       </div>
     </form>
                           
