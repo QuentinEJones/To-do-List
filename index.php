@@ -52,7 +52,7 @@
      <div class="col-md-6">
         <label for="Title" class="form-label">Description</label> 
        <br>
-       <textarea name="description" rows="4" cols="120" placeholder="Type Your Desc Here"></textarea>
+       <textarea name="description" rows="4" cols="120" placeholder="Type Your Description Here"></textarea>
       </div>
        <br>
       <div class="col-md-7">
