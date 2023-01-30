@@ -36,7 +36,7 @@
           <option>Events </option>
           <option>HomeWork </option>
           <option>Chores </option>
-           <option>Helath </option>
+           <option>Health </option>
          </select>
       </div>
                <div class="col-md-3">
