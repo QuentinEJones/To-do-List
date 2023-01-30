@@ -40,12 +40,12 @@
          </select>
       </div>
                <div class="col-md-3">
-        <label for="Catagory" class="form-label">Tasks Due Date</label>
+        <label for="Catagory" class="form-label">Tasks Start Date</label>
          <br>
         <input type="date">
       </div>
                <div class="col-md-3">
-        <label for="Catagory" class="form-label">Tasks Start Date</label>
+        <label for="Catagory" class="form-label">Tasks Due Date</label>
          <br>
         <input type="date">
       </div>
