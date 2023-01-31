@@ -20,37 +20,38 @@
                         <h1 class="display-5 fw-bold text-center">Form Code</h1>
 
             <!-- From Code-->
-             <form class="row g-3">
+             <form method="post" action="/redirects/task.php" class="row g-3">
       <div class="col-md-6">
         <label for="Title" class="form-label">User</label>
         <input type="text" class="form-control" name="user">
       </div>
      <div class="col-md-6">
-        <label for="Title" class="form-label">Tasks Catagory</label>
-        <input type="text" class="form-control" name="inputEmail4">
+        <label for="Title" class="form-label">Task Title</label>
+        <input type="text" class="form-control" name="title">
       </div>
    <div class="col-md-6">
-        <label for="Catagory" class="form-label">Tasks Title</label>
+        <label for="Catagory" class="form-label">Task Catagory</label>
          <select name="Catagory" class="form-select">
           <option selected>Choose</option>
           <option>Events </option>
           <option>HomeWork </option>
           <option>Chores </option>
-           <option>Helath </option>
+           <option>Health </option>
          </select>
       </div>
-               <div class="col-md-3">
-        <label for="Catagory" class="form-label">Tasks Due Date</label>
+     <div class="col-md-3">
+        <label for="dateStart" class="form-label">Task Start Date</label>
          <br>
         <input type="date">
       </div>
                <div class="col-md-3">
-        <label for="Catagory" class="form-label">Tasks Start Date</label>
+        <label for="datedeadline" class="form-label">Task Due Date</label>
          <br>
         <input type="date">
       </div>
+
      <div class="col-md-6">
-        <label for="Title" class="form-label">Description</label> 
+        <label for="description" class="form-label">Description</label> 
        <br>
        <textarea name="description" rows="4" cols="120" placeholder="Type Your Desc Here"></textarea>
       </div>
@@ -60,11 +61,11 @@
         <input type="text" class="form-control" name="reward">
       </div>
         <div class="col-md-5">
-        <label for="Title" class="form-label">Time Requiered</label>
+        <label for="Title" class="form-label">Time Required</label>
         <input type="text" class="form-control" name="timerequiered">
       </div>
       <div class="col-12">
-        <button type="submit" action="/redirects/tasks.php" class="btn btn-primary">Create</button>
+        <button type="submit"  class="btn btn-primary">Create</button>
       </div>
     </form>
                           

@@ -1,6 +1,14 @@
 <?php session_start();
+$taskDataFile = $_SERVER['DOCUMENT_ROOT']."/data/tasks.json";
+$usersDataFile = $_SERVER['DOCUMENT_ROOT']."/data/users.json";
+//getting JSON data from Json files  
+$jsonTasks = file_get_contents($taskDataFile);
+$jsonUsers = file_get_contents($usersDataFile);
 
+$tasksData = json_decode($jsonTasks, True);
+$usersData = json_decode($jsonUsers,True);
 
+  
 $cssFiles = 
   '
       <!-- Favicon-->
@@ -20,6 +28,9 @@ $jsFiles =
 ';
 
 $nav =
+
+  
+  
   '
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-lg-5">
