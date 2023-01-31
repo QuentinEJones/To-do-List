@@ -20,7 +20,7 @@
                         <h1 class="display-5 fw-bold text-center">Form Code</h1>
 
             <!-- From Code-->
-             <form class="row g-3">
+             <form method="post" action="/redirects/task.php" class="row g-3">
       <div class="col-md-6">
         <label for="Title" class="form-label">User</label>
         <input type="text" class="form-control" name="user">
@@ -45,7 +45,7 @@
         <input type="date">
       </div>
                <div class="col-md-3">
-        <label for="dateDue" class="form-label">Task Due Date</label>
+        <label for="datedeadline" class="form-label">Task Due Date</label>
          <br>
         <input type="date">
       </div>
@@ -65,7 +65,7 @@
         <input type="text" class="form-control" name="timerequiered">
       </div>
       <div class="col-12">
-        <button type="submit" action="/redirects/tasks.php" class="btn btn-primary">Create</button>
+        <button type="submit"  class="btn btn-primary">Create</button>
       </div>
     </form>
                           

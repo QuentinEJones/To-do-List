@@ -2,27 +2,29 @@
 
 
 
+echo '<pre>' ,
+  var_dump($tasksData) , 
+ echo '</pre>';
 
-
-if(isset(['BTN_create']) && $_POST['user'] > 0) {
+if(isset($_POST['BTN_create']) && $_POST['user'] > 0) {
   
   
    
 
-$date = date_create($_POST['datedeadline'])
-  $datedeadline = date_format($date, "Y/m/d")
+$date = date_create($_POST['datedeadline']);
+  $datedeadline = date_format($date, "Y/m/d");
 
   $largest_uid = 0;
   foreach ($taskdata as $item) {
     if ($item['uid'] > $largest_uid){
       $largest_uid = $item['uid'];
-      $newID = $largest_uid+;
+      $newID = $largest_uid+1;
     }
   }
 
   $newFormData = array(
     "uid"=> $newID,
-  "userUID"=> $_POST['user'],
+    "userUID"=> $_POST['user'],
     "dateStart"=> date['Y/m/d'],
     "datedeadline"=> "$datedeadlineformated",
     "dateComplete"=> NULL,
@@ -43,7 +45,7 @@ $taskDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
 
 echo '<pre>' ,
   var_dump($taskData) , 
-  '</pre>';
+ echo '</pre>';
   
 
 
