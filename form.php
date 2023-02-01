@@ -22,7 +22,7 @@
             <!-- From Code-->
              <form method="post" action="/redirects/task.php" class="row g-3">
       <div class="col-md-6">
-        <label for="Title" class="form-label">User</label>
+        <label for="user" class="form-label">User</label>
         <input type="text" class="form-control" name="user">
       </div>
      <div class="col-md-6">
@@ -65,7 +65,7 @@
         <input type="text" class="form-control" name="timerequiered">
       </div>
       <div class="col-12">
-        <button type="submit"  class="btn btn-primary">Create</button>
+        <button type="submit"  name = "BTN_create" class="btn btn-primary">Create</button>
       </div>
     </form>
                           
