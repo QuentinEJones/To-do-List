@@ -5,9 +5,13 @@ $usersDataFile = $_SERVER['DOCUMENT_ROOT']."/data/users.json";
 $jsonTasks = file_get_contents($taskDataFile);
 $jsonUsers = file_get_contents($usersDataFile);
 
-$tasksData = json_decode($jsonTasks, True);
-$usersData = json_decode($jsonUsers,True);
+$taskData = json_decode($jsonTasks, True);
+$userData = json_decode($jsonUsers,True);
 
+
+// echo '<pre>' ,
+//   var_dump($tasksData) , 
+//   '</pre>';
   
 $cssFiles = 
   '

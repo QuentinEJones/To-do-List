@@ -1,10 +1,9 @@
 <?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; 
 
+echo '<pre>';
+  var_dump($_POST);
+ echo  '</pre>';
 
-
-echo '<pre>' ,
-  var_dump($tasksData) , 
- echo '</pre>';
 
 if(isset($_POST['BTN_create']) && $_POST['user'] > 0) {
   
@@ -39,13 +38,11 @@ $date = date_create($_POST['datedeadline']);
 
 
 
-array_push($taskData, $newFormData);
-$taskDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
-  file_get_contents($taskDataFile, $taskDataJSON); 
+// array_push($taskData, $newFormData);
+// $taskDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
+//   file_get_contents($taskDataFile, $taskDataJSON); 
 
-echo '<pre>' ,
-  var_dump($taskData) , 
- echo '</pre>';
+
   
 
 
