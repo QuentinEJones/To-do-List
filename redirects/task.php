@@ -38,9 +38,13 @@ $date = date_create($_POST['datedeadline']);
 
 
 
-// array_push($taskData, $newFormData);
-// $taskDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
-//   file_get_contents($taskDataFile, $taskDataJSON); 
+array_push($taskData, $newFormData);
+$taskDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
+  file_get_contents($taskDataFile, $taskDataJSON); 
+
+ //  echo '<pre>';
+ //  var_dump($_POST);
+ // echo  '</pre>';
 
 
   
