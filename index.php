@@ -15,11 +15,60 @@
         <!-- Header-->
         <header class="py-5">
             <div class="container px-lg-5">
-                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                <div class="p-4 p-lg-5 bg-light rounded-3 ">
                     <div class="m-4 m-lg-5">
-                        <h1 class="display-5 fw-bold">A warm welcome!</h1>
-                        <p class="fs-4">Bootstrap utility classes are used to create this jumbotron since the old component has been removed from the framework. Why create custom CSS when you can use utilities?</p>
-                        <a class="btn btn-primary btn-lg" href="#!">Call to action</a>
+                        <h1 class="display-5 fw-bold text-center">Form Code</h1>
+
+            <!-- From Code-->
+             <form class="row g-3">
+      <div class="col-md-6">
+        <label for="Title" class="form-label">User</label>
+        <input type="text" class="form-control" name="user">
+      </div>
+     <div class="col-md-6">
+        <label for="Title" class="form-label">Tasks Catagory</label>
+        <input type="text" class="form-control" name="inputEmail4">
+      </div>
+   <div class="col-md-6">
+        <label for="Catagory" class="form-label">Tasks Title</label>
+         <select name="Catagory" class="form-select">
+          <option selected>Choose</option>
+          <option>Events </option>
+          <option>HomeWork </option>
+          <option>Chores </option>
+           <option>Helath </option>
+         </select>
+      </div>
+               <div class="col-md-3">
+        <label for="Catagory" class="form-label">Tasks Due Date</label>
+         <br>
+        <input type="date">
+      </div>
+               <div class="col-md-3">
+        <label for="Catagory" class="form-label">Tasks Start Date</label>
+         <br>
+        <input type="date">
+      </div>
+     <div class="col-md-6">
+        <label for="Title" class="form-label">Description</label> 
+       <br>
+       <textarea name="description" rows="4" cols="120" placeholder="Type Your Desc Here"></textarea>
+      </div>
+       <br>
+      <div class="col-md-7">
+        <label for="Title" class="form-label">Reward/Cost</label>
+        <input type="text" class="form-control" name="reward">
+      </div>
+        <div class="col-md-5">
+        <label for="Title" class="form-label">Time Requiered</label>
+        <input type="text" class="form-control" name="timerequiered">
+      </div>
+      <div class="col-12">
+        <button type="submit" action="/redirects/tasks.php" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+                          
+                       
                     </div>
                 </div>
             </div>

@@ -1,4 +1,15 @@
-<?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; ?>
+<?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; 
+
+
+
+?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,35 +31,52 @@
                         <h1 class="display-5 fw-bold text-center">Form Code</h1>
 
             <!-- From Code-->
-             <form class="row g-3">
+             <form method="post" action="/redirects/task.php" class="row g-3">
       <div class="col-md-6">
-        <label for="Title" class="form-label">Email</label>
-        <input type="text" class="form-control" name="inputEmail4">
+        <label for="user" class="form-label">User</label>
+        <input type="text" class="form-control" name="user">
       </div>
-      <div class="col-md-6">
-        <label for="Catagory" class="form-label">Tasks Catagory</label>
+     <div class="col-md-6">
+        <label for="Title" class="form-label">Task Title</label>
+        <input type="text" class="form-control" name="title">
+      </div>
+   <div class="col-md-6">
+        <label for="Catagory" class="form-label">Task Catagory</label>
          <select name="Catagory" class="form-select">
           <option selected>Choose</option>
           <option>Events </option>
           <option>HomeWork </option>
           <option>Chores </option>
+           <option>Health </option>
          </select>
       </div>
-      <div class="col-12">
-        <label for="Project" class="form-label">Project Type</label>
-        <input type="text" class="form-control" name="inputAddress" placeholder="HW Type/ Where / What chore">
+     <div class="col-md-3">
+        <label for="dateStart" class="form-label">Task Start Date</label>
+         <br>
+        <input type="date">
       </div>
-      <div class="col-12">
-        <label for="time" class="form-label">Required Time</label>
-        <input type="text" class="form-control" name="time" placeholder="How much time will it take">
+               <div class="col-md-3">
+        <label for="datedeadline" class="form-label">Task Due Date</label>
+         <br>
+        <input type="date">
       </div>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label">Reward/Cost</label>
+
+     <div class="col-md-6">
+        <label for="description" class="form-label">Description</label> 
+       <br>
+       <textarea name="description" rows="4" cols="120" placeholder="Type Your Desc Here"></textarea>
+      </div>
+       <br>
+      <div class="col-md-7">
+        <label for="Title" class="form-label">Reward/Cost</label>
         <input type="text" class="form-control" name="reward">
       </div>
-      
+        <div class="col-md-5">
+        <label for="Title" class="form-label">Time Required</label>
+        <input type="text" class="form-control" name="timerequiered">
+      </div>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Done</button>
+        <button type="submit"  name = "BTN_create" class="btn btn-primary">Create</button>
       </div>
     </form>
                           
