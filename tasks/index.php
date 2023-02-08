@@ -1,16 +1,4 @@
-<?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; 
-
-
-
-  $result = array();
-foreach($taskData as $task) {
-  foreach ($userData as $user){
-    if($item["userUID"] == $user["uid"]) {
-      unset($user )
-      $result[] = array_merge($task, $user)
-    }
-  }
-}
+<?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php';
 
 
 ?>
@@ -40,32 +28,17 @@ foreach($taskData as $task) {
                     <div class="m-4 m-lg-5">
                         <h1 class="display-5 fw-bold">Form Code</h1>
                          <form class="row g-3">
-      <div class="col-md-6">
-        <label for="Title" class="form-label">Email</label>
-        <input type="text" class="form-control" name="inputEmail4">
-      </div>
-      <div class="col-md-6">
+      <div class="col">
         <label for="Catagory" class="form-label">Tasks Catagory</label>
          <select name="Catagory" class="form-select">
           <option selected>Choose</option>
-          <option>Events </option>
-          <option>HomeWork </option>
-          <option>Chores </option>
+          <option>Status</option>
+          <option>User</option>
+          <option>Category</option>
          </select>
       </div>
-      <div class="col-12">
-        <label for="Project" class="form-label">Project Type</label>
-        <input type="text" class="form-control" name="inputAddress" placeholder="HW Type/ Where / What chore">
-      </div>
-      <div class="col-12">
-        <label for="time" class="form-label">Required Time</label>
-        <input type="text" class="form-control" name="time" placeholder="How much time will it take">
-      </div>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label">Reward/Cost</label>
-        <input type="text" class="form-control" name="reward">
-      </div>
-      
+     
+     
       <div class="col-12">
         <button type="submit" class="btn btn-primary">Filter Goes here</button>
       </div>
@@ -111,7 +84,7 @@ echo '
 
 ?>
 
-                      
+                     
                       <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
@@ -119,7 +92,7 @@ echo '
                         <td>@mdo</td>
                          <td>@mdo</td>
                       </tr>
-                    
+                   
                     </tbody>
                   </table>
                 </div>
