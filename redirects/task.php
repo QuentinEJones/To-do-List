@@ -1,13 +1,16 @@
 <?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; 
 
-echo '<pre>';
-  var_dump($_POST);
- echo  '</pre>';
+// echo '<pre>';
+//   var_dump($_POST);
+//  echo  '</pre>';
 
 
-if(isset($_POST['BTN_create']) && $_POST['user'] > 0) {
+if(isset($_POST['BTN_create']) && $_POST['userUID'] > 0) {
   
-  
+}
+
+ 
+ 
    
 
 $date = date_create($_POST['datedeadline']);
@@ -20,44 +23,39 @@ $date = date_create($_POST['datedeadline']);
       $newID = $largest_uid+1;
     }
   }
+   
+// //turn data into php array
+// $newFormData = array(
+//           "uid"=> $newUID,
+//           "userUID"=> $_POST['user'],
+//           "dateDeadline"=> $_POST['datedeadline'],
+//           "dateCreate"=> date("Y-m-d"),
+//           "dateComplete"=> "NULL",
+//           "status"=> "XXXXX",
+//           "title" => $_POST["title"],
+//           "categories" => $_POST["categories"],
+//           "reward" => $_POST['reward'],
+//           "description" => $_POST['description'],
+//           "timeNeeded" => $_POST['timerequiered']
+// );
 
-  $newFormData = array(
-    "uid"=> $newID,
-    "userUID"=> $_POST['user'],
-    "dateStart"=> date['Y/m/d'],
-    "datedeadline"=> "$datedeadlineformated",
-    "dateComplete"=> NULL,
-    "title"=> $_POST['title'],
-    "description"=> $_POST['description'],
-    "staus"=> "created",
-     "reward"=> $_POST['reward'],
-     "timerequiered"=> $_POST['timerequiered'],
-     "Catagory"=> $_POST['Catagory'],
-  );
+
+
+// //push newform data (The php array we just made) into tasksData (the json data that was converted into a php array)
+// array_push($taskData, $newFormData);
+// //encode tasksData back into json
+// $tasksDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
+// file_get_contents($taskDataFile, $taskDataJSON);
 
 
 
 
-array_push($taskData, $newFormData);
-$taskDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
-  file_get_contents($taskDataFile, $taskDataJSON); 
+//encho out taksData
+  // echo '<pre>';
+  // var_dump($tasksDataAsJSON);
+  // echo '</pre>';
 
- //  echo '<pre>';
- //  var_dump($_POST);
- // echo  '</pre>';
 
 
   
-
-
-
-}
-
-
-
-
-
-
-
-
 ?>
