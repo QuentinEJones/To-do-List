@@ -3,9 +3,15 @@
 	"uid": 101,
 	"fName": "Todd",
 	"lName": "Benrud"
-  },{
+  },
+   {
 	"uid": 102,
+	"fName": "Todd",
+	"lName": "Benrud"
+  },{
+	"uid": 103,
 	"fName": "John",
 	"lName": "Smith"
   }
+  
 ]
