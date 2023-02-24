@@ -1,14 +1,27 @@
-<?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; 
+<?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php';
+
+$taskCount = 0;
+$catCountProject = 0;
+foreach($taskData as $task){
+ 
+  if($task['categories'] == "project"){
+    $catCountProject++;
+  }
+ 
+ 
+  $taskCount++;
+}
+
+$userCount = 0;
+foreach($userData as $user){
+  $userCount++;
+}
 
 
-
+       
+       
+       
 ?>
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +52,7 @@
          <?php
         foreach($userData as $user) {
          echo '<option value ="'.$user["uid"].'">'.$user["fName"].' '.$user["lName"].'</option>';
-          
+         
         }
         ?>
          </select>
@@ -65,7 +78,7 @@
       </div>
 
      <div class="col-md-6">
-        <label for="description" class="form-label">Description</label> 
+        <label for="description" class="form-label">Description</label>
        <br>
        <textarea name="description" rows="4" cols="110" placeholder="Type Your Desc Here"></textarea>
       </div>
@@ -82,7 +95,7 @@
         <button type="submit"  name = "BTN_create" class="btn btn-primary">Create</button>
       </div>
     </form>
-                          
+                         
                        
                     </div>
                 </div>
@@ -97,8 +110,8 @@
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
-                                <h2 class="fs-4 fw-bold">Fresh new layout</h2>
-                                <p class="mb-0">With Bootstrap 5, we've created a fresh new layout for this template!</p>
+                                <h2 class="fs-4 fw-bold">Count Data</h2>
+                                <p class="mb-0">Total Tasks: <?php echo $taskCount; ?></p>
                             </div>
                         </div>
                     </div>
@@ -106,8 +119,8 @@
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
-                                <h2 class="fs-4 fw-bold">Free to download</h2>
-                                <p class="mb-0">As always, Start Bootstrap has a powerful collectin of free templates.</p>
+                                <h2 class="fs-4 fw-bold">Category Count</h2>
+                                <p class="mb-0">Project Count: <?php echo $catCountProject; ?></p>
                             </div>
                         </div>
                     </div>
@@ -115,8 +128,8 @@
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
-                                <h2 class="fs-4 fw-bold">Jumbotron hero header</h2>
-                                <p class="mb-0">The heroic part of this template is the jumbotron hero header!</p>
+                                <h2 class="fs-4 fw-bold">User Data</h2>
+                                <p class="mb-0">Total Users: <?php echo $userCount; ?> </p>
                             </div>
                         </div>
                     </div>
