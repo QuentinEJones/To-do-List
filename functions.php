@@ -4,13 +4,29 @@ $usersDataFile = $_SERVER['DOCUMENT_ROOT']."/data/users.json";
 //getting JSON data from Json files  
 $jsonTasks = file_get_contents($taskDataFile);
 $jsonUsers = file_get_contents($usersDataFile);
-
 $taskData = json_decode($jsonTasks, True);
 $userData = json_decode($jsonUsers,True);
 
 
+
+  $combinedData = array();
+  foreach ($taskData as $tasks){
+    foreach ($userData as $user){
+      if ($tasks["userUID"] == $user["uid"]){
+        unset($user["uid"]);
+        $combinedData[] = array_merge($tasks, $user);
+      }
+    }
+  }
+
+
+
+
+
+
+
 // echo '<pre>' ,
-//   var_dump($tasksData) , 
+//   var_dump($combinedData) , 
 //   '</pre>';
   
 $cssFiles = 
@@ -42,8 +58,8 @@ $nav =
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Tasks</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/tasks/index.php">Tasks</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Search</a></li>
                     </ul>
                 </div>

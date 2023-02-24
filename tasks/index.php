@@ -1,17 +1,24 @@
 <?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php';
 
-foreach ($taskData as $item1) {
-    foreach ($userData as $item2) {
-        if ($item1["userUID"] == $item2["uid"]) {
-            unset($item2["uid"]);
-            $combinedData[] = array_merge($item1, $item2);
-        }
-    }
-}
-    // echo '<pre>';
-    // var_dump($combinedData);
-    // echo  '</pre>';
 
+
+if ($_GET['search'] == 'yes'){
+    $usableTaskData = $_SESSION['searchResults'];
+  } else {
+    $usableTaskData = $combinedData;
+  }
+
+
+
+$categories = array();
+  foreach ($combinedData as $cat) {
+      $categories[] = $cat['categories'];
+  }
+  $uniqueCats = array_unique($categories);
+
+  // echo '<pre>';
+  // var_dump( );
+  // echo '</pre>';
 ?>
 
 
@@ -33,32 +40,34 @@ foreach ($taskData as $item1) {
         <!-- Responsive navbar-->
        <?php echo $nav ?>
         <!-- Header-->
-        <header class="py-5">
+
+      
+       <header class="py-5">
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
                     <div class="m-4 m-lg-5">
-                        <h1 class="display-5 fw-bold">Form Code</h1>
-                         <form class="row g-3">
-      <div class="col">
-        <label for="Catagory" class="form-label">Tasks Catagory</label>
-         <select name="Catagory" class="form-select">
-          <option selected>Choose</option>
-          <option>Status</option>
-          <option>User</option>
-          <option>Category</option>
-         </select>
-      </div>
-     
-     
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Filter Goes here</button>
-      </div>
-    </form>
+                        <h1 class="display-5 fw-bold">Filtered Tasks</h1>
+                        <p class="fs-4">Form goes here</p>
+                        <form action="/redirects/search.php" method="post">
+                          <select class="form-select" name="fliterCategory">
+                            <option selected>Choose Category</option>
+                            <?php
+                              foreach($uniqueCats as $category) {
+                                echo '<option value="'.$category.'">'.$category.'</option>';
+                              }
+                            ?>
+                          </select>
+                          <br>
+                          <input class="btn btn-primary btn-lg" type="submit" value="Search" name="btnSearch" id="btnSearch">
+                        </form>
                     </div>
                 </div>
             </div>
         </header>
 
+
+      
+ <!-- Page Content-->
       <header class="py-5">
             <div class="container px-lg-5">
                 <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
