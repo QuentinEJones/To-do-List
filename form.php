@@ -34,15 +34,7 @@
              <form method="post" action="/redirects/task.php" class="row g-3">
       <div class="col-md-6">
         <label for="user" class="form-label">User</label>
-       <select name="user" class="form-select">
-          <option selected>Choose User</option>
-         <?php
-        foreach($userData as $user) {
-         echo '<option value ="'.$user["uid"].'">'.$user["fName"].' '.$user["lName"].'</option>';
-          
-        }
-        ?>
-         </select>
+        <input type="text" class="form-control" name="user">
       </div>
      <div class="col-md-6">
         <label for="Title" class="form-label">Task Title</label>
@@ -58,6 +50,11 @@
            <option>Health </option>
          </select>
       </div>
+     <div class="col-md-3">
+        <label for="dateStart" class="form-label">Task Start Date</label>
+         <br>
+        <input type="date">
+      </div>
                <div class="col-md-3">
         <label for="datedeadline" class="form-label">Task Due Date</label>
          <br>
@@ -67,7 +64,7 @@
      <div class="col-md-6">
         <label for="description" class="form-label">Description</label> 
        <br>
-       <textarea name="description" rows="4" cols="110" placeholder="Type Your Desc Here"></textarea>
+       <textarea name="description" rows="4" cols="120" placeholder="Type Your Desc Here"></textarea>
       </div>
        <br>
       <div class="col-md-7">

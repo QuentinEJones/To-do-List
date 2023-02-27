@@ -1,28 +1,4 @@
-<?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php';
-
-$taskCount = 0;
-$catCountProject = 0;
-foreach($taskData as $task){
- 
-  if($task['categories'] == "project"){
-    $catCountProject++;
-  }
- 
- 
-  $taskCount++;
-}
-
-$userCount = 0;
-foreach($userData as $user){
-  $userCount++;
-}
-
-
-       
-       
-       
-?>
-
+<?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,43 +20,39 @@ foreach($userData as $user){
                         <h1 class="display-5 fw-bold text-center">Form Code</h1>
 
             <!-- From Code-->
-             <form method="post" action="/redirects/task.php" class="row g-3">
+             <form class="row g-3">
       <div class="col-md-6">
-        <label for="user" class="form-label">User</label>
-       <select name="user" class="form-select">
-          <option selected>Choose User</option>
-         <?php
-        foreach($userData as $user) {
-         echo '<option value ="'.$user["uid"].'">'.$user["fName"].' '.$user["lName"].'</option>';
-         
-        }
-        ?>
-         </select>
+        <label for="Title" class="form-label">User</label>
+        <input type="text" class="form-control" name="user">
       </div>
      <div class="col-md-6">
-        <label for="Title" class="form-label">Task Title</label>
-        <input type="text" class="form-control" name="title">
+        <label for="Title" class="form-label">Tasks Catagory</label>
+        <input type="text" class="form-control" name="inputEmail4">
       </div>
    <div class="col-md-6">
-        <label for="Catagory" class="form-label">Task Catagory</label>
+        <label for="Catagory" class="form-label">Tasks Title</label>
          <select name="Catagory" class="form-select">
           <option selected>Choose</option>
           <option>Events </option>
           <option>HomeWork </option>
           <option>Chores </option>
-           <option>Health </option>
+           <option>Helath </option>
          </select>
       </div>
                <div class="col-md-3">
-        <label for="datedeadline" class="form-label">Task Due Date</label>
+        <label for="Catagory" class="form-label">Tasks Due Date</label>
          <br>
         <input type="date">
       </div>
-
+               <div class="col-md-3">
+        <label for="Catagory" class="form-label">Tasks Start Date</label>
+         <br>
+        <input type="date">
+      </div>
      <div class="col-md-6">
-        <label for="description" class="form-label">Description</label>
+        <label for="Title" class="form-label">Description</label> 
        <br>
-       <textarea name="description" rows="4" cols="110" placeholder="Type Your Desc Here"></textarea>
+       <textarea name="description" rows="4" cols="120" placeholder="Type Your Desc Here"></textarea>
       </div>
        <br>
       <div class="col-md-7">
@@ -88,14 +60,14 @@ foreach($userData as $user){
         <input type="text" class="form-control" name="reward">
       </div>
         <div class="col-md-5">
-        <label for="Title" class="form-label">Time Required</label>
+        <label for="Title" class="form-label">Time Requiered</label>
         <input type="text" class="form-control" name="timerequiered">
       </div>
       <div class="col-12">
-        <button type="submit"  name = "BTN_create" class="btn btn-primary">Create</button>
+        <button type="submit" action="/redirects/tasks.php" class="btn btn-primary">Create</button>
       </div>
     </form>
-                         
+                          
                        
                     </div>
                 </div>
@@ -110,8 +82,8 @@ foreach($userData as $user){
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-collection"></i></div>
-                                <h2 class="fs-4 fw-bold">Count Data</h2>
-                                <p class="mb-0">Total Tasks: <?php echo $taskCount; ?></p>
+                                <h2 class="fs-4 fw-bold">Fresh new layout</h2>
+                                <p class="mb-0">With Bootstrap 5, we've created a fresh new layout for this template!</p>
                             </div>
                         </div>
                     </div>
@@ -119,8 +91,8 @@ foreach($userData as $user){
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-cloud-download"></i></div>
-                                <h2 class="fs-4 fw-bold">Category Count</h2>
-                                <p class="mb-0">Project Count: <?php echo $catCountProject; ?></p>
+                                <h2 class="fs-4 fw-bold">Free to download</h2>
+                                <p class="mb-0">As always, Start Bootstrap has a powerful collectin of free templates.</p>
                             </div>
                         </div>
                     </div>
@@ -128,8 +100,8 @@ foreach($userData as $user){
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-card-heading"></i></div>
-                                <h2 class="fs-4 fw-bold">User Data</h2>
-                                <p class="mb-0">Total Users: <?php echo $userCount; ?> </p>
+                                <h2 class="fs-4 fw-bold">Jumbotron hero header</h2>
+                                <p class="mb-0">The heroic part of this template is the jumbotron hero header!</p>
                             </div>
                         </div>
                     </div>
