@@ -12,7 +12,7 @@ $sumOfreward = $sumOfreward + $task['reward'];
  
 $time = $time + $task['timeNeeded']; 
 
-$totalSuMofSUm  = $sumOfreward +$sumOfprojectrewards + $time + $task['reward'];
+$totalSuMofSUm  =  $time / $sumOfreward;
 
 
 
