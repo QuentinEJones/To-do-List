@@ -2,20 +2,38 @@
 
 $taskCount = 0;
 $catCountProject = 0;
+$sumOfreward = 0;
+$time = 0;
+$sumOfprojectrewards = 0;
+$totalSuMofSUm = 0;
 foreach($taskData as $task){
+
+$sumOfreward = $sumOfreward + $task['reward'];
  
-  if($task['categories'] == "project"){
+$time = $time + $task['timeNeeded']; 
+
+$totalSuMofSUm  =  $time / $sumOfreward;
+
+
+
+  
+  $reward = $task['reward']+10;
+// echo $reward."<br>";
+
+
+
+  
+  if($task['categories'] = "project"){
+    $sumOfprojectrewards = $sumOfprojectrewards + $task['reward'];
     $catCountProject++;
   }
 }
 
 if ( strtotime($task['dateDeadline'])    <  strtotime(Date("h:i:sa"))   ){
-echo "deadline";
+// echo "deadline";
   
 }
- // if(strtotime($task['dateDeadline']) < strtotime(Date("h:i:sa"))){
- //     echo "deadline"
- //  }
+
 
   $dateTest = $task['dateDeadline'];
 {
@@ -160,8 +178,12 @@ foreach($userData as $user){
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-code"></i></div>
-                                <h2 class="fs-4 fw-bold">Simple clean code</h2>
-                                <p class="mb-0">We keep our dependencies up to date and squash bugs as they come!</p>
+                                <h2 class="fs-4 fw-bold">Time and Reward Totals</h2>
+                                <p class="mb-0">Total rewards <?php echo $sumOfreward ?></p>
+                              
+                               <p class="mb-0">Total time <?php echo $time?></p>
+                              <p class="mb-0">Total project rewards  <?php echo  $sumOfprojectrewards?></p> 
+                              <p class="mb-0">Total SUM OF SUMS  <?php echo  $totalSuMofSUm?></p>  
                             </div>
                         </div>
                     </div>
