@@ -44,12 +44,27 @@ $userCount = 0;
 foreach($userData as $user){
   $userCount++;
 }
+ 
+$sortedTaskData = $taskData;
 
 
-       
-       
-       
+
+
+
+
+
+usort($sortedTaskData, 'sortByReward');
+
+$i=0;
+$top3rewards = [];
+
+while($i<=2){
+  $top3rewards[$i] = $sortedTaskData[$i];
+  $i++;
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -191,8 +206,17 @@ foreach($userData as $user){
                         <div class="card bg-light border-0 h-100">
                             <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                                 <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-patch-check"></i></div>
-                                <h2 class="fs-4 fw-bold">A name you trust</h2>
-                                <p class="mb-0">Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>
+                                <h2 class="fs-4 fw-bold">Top 3 Rewards</h2>
+                                <p class="mb-0">
+                                  <?php
+                                  foreach($top3rewards as $task){
+                                    echo $task["title"].":".$task["reward"]."<br>";
+                                  }
+
+                                ?>
+                                </p>
+                              <p class="mb-0"></p>
+                              <p class="mb-0"></p>
                             </div>
                         </div>
                     </div>
