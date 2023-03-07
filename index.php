@@ -15,7 +15,6 @@ $time = $time + $task['timeNeeded'];
 $totalSuMofSUm  =  $time / $sumOfreward;
 
 
-
   
   $reward = $task['reward']+10;
 // echo $reward."<br>";

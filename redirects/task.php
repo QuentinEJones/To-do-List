@@ -5,26 +5,24 @@ echo '<pre>';
  echo  '</pre>';
 
 
-if(isset($_POST['BTN_create']) && $_POST['user'] > 0) {
+if(isset($_POST['BTN_create']) && $_POST['user'] != "0") {
   
   
    
-
-$date = date_create($_POST['datedeadline']);
-  $datedeadline = date_format($date, "Y/m/d");
-
-  $largest_uid = 0;
-  foreach ($taskdata as $item) {
-    if ($item['uid'] > $largest_uid){
-      $largest_uid = $item['uid'];
-      $newID = $largest_uid+1;
+ $date = date_create($_POST['datedeadline']);
+ $deadlineReformatted = date_format($date, "Y/m/d");
+  
+     $largest_uid = 0;
+    foreach ($taskData as $item) {
+        if ($item['uid'] > $largest_uid) {
+            $largest_uid = $item['uid'];
+            $newUID = $largest_uid+1;
+        }
     }
-  }
-
   $newFormData = array(
     "uid"=> $newID,
     "userUID"=> $_POST['user'],
-    "dateStart"=> date['Y/m/d'],
+    "dateStart"=>date("Y/m/d"),
     "datedeadline"=> "$datedeadlineformated",
     "dateComplete"=> NULL,
     "title"=> $_POST['title'],
