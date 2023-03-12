@@ -1,38 +1,36 @@
 <?php /*1st Line on every webpage.*/ include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; 
 
-echo '<pre>';
-  var_dump($_POST);
- echo  '</pre>';
+// echo '<pre>';
+//   var_dump($_POST);
+//  echo  '</pre>';
 
 
-if(isset($_POST['BTN_create']) && $_POST['user'] > 0) {
+if(isset($_POST['BTN_create']) && $_POST['user'] != "0") {
   
   
    
-
-$date = date_create($_POST['datedeadline']);
-  $datedeadline = date_format($date, "Y/m/d");
-
-  $largest_uid = 0;
-  foreach ($taskdata as $item) {
-    if ($item['uid'] > $largest_uid){
-      $largest_uid = $item['uid'];
-      $newID = $largest_uid+1;
+ $date = date_create($_POST['datedeadline']);
+ $deadlineReformatted = date_format($date, "Y/m/d");
+  
+     $largest_uid = 0;
+    foreach ($taskData as $item) {
+        if ($item['uid'] > $largest_uid) {
+            $largest_uid = $item['uid'];
+            $newUID = $largest_uid+1;
+        }
     }
-  }
-
   $newFormData = array(
-    "uid"=> $newID,
+    "uid"=> $newUID,
     "userUID"=> $_POST['user'],
-    "dateStart"=> date['Y/m/d'],
-    "datedeadline"=> "$datedeadlineformated",
-    "dateComplete"=> NULL,
+    "dateCreate"=>date("Y/m/d"),
+    "dateDeadline"=> $deadlineReformatted, 
+    "dateComplete"=> NULL,  
     "title"=> $_POST['title'],
     "description"=> $_POST['description'],
-    "staus"=> "created",
+    "status"=> "created",
      "reward"=> $_POST['reward'],
      "timerequiered"=> $_POST['timerequiered'],
-     "Catagory"=> $_POST['Catagory'],
+     "categories"=> $_POST['categories']
   );
 
 
@@ -40,10 +38,10 @@ $date = date_create($_POST['datedeadline']);
 
 array_push($taskData, $newFormData);
 $taskDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
-  file_get_contents($taskDataFile, $taskDataJSON); 
+  file_put_contents($taskDataFile, $taskDataJSON); 
 
  //  echo '<pre>';
- //  var_dump($_POST);
+ //  var_dump($taskData);
  // echo  '</pre>';
 
 
@@ -56,7 +54,7 @@ $taskDataJSON = json_encode($taskData, JSON_PRETTY_PRINT);
 
 
 
-
+header('Location: /index.php');
 
 
 

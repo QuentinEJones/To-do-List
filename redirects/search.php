@@ -22,7 +22,7 @@
       foreach($combinedData as $key => $task){
        
         //checking to see if the values match
-        if($_POST['fliterCategory'] == $task['category']){
+        if($_POST['fliterCategory'] == $task['categories']){
          
           //search match data. needs a session
           $_SESSION['searchResults'][$searchResultsIndex] = $task;
@@ -65,7 +65,7 @@
       //looping through the combined data
       foreach($combinedData as $key => $task){
      
-        if($_POST['fliterCategory'] == $task['category'] && $_POST['fliterUser'] == $task['userUID']){ // if both are used
+        if($_POST['fliterCategory'] == $task['categories'] && $_POST['fliterUser'] == $task['userUID']){ // if both are used
 
           //search match data. needs a session
           $_SESSION['searchResults'][$searchResultsIndex] = $task;
@@ -78,7 +78,7 @@
       } // end of the foreach
      
     } // end of else
-
+  
 
  
   } //end of the if
