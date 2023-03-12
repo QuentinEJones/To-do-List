@@ -16,7 +16,15 @@ function sortByReward($a, $b){
 return ($a['reward'] < $b['reward']) ? 1: -1;
 }
 
-
+$combinedData = array();
+  foreach ($taskData as $tasks){
+    foreach ($userData as $user){
+      if ($tasks["userUID"] == $user["uid"]){
+        unset($user["uid"]);
+        $combinedData[] = array_merge($tasks, $user);
+      }
+    }
+  }
 
 
 

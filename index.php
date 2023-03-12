@@ -7,12 +7,14 @@ $time = 0;
 $sumOfprojectrewards = 0;
 $totalSuMofSUm = 0;
 foreach($taskData as $task){
-
+  
 $sumOfreward = $sumOfreward + $task['reward'];
+
  
 $time = $time + $task['timeNeeded']; 
 
 $totalSuMofSUm  =  $time / $sumOfreward;
+
 
 
   
@@ -105,10 +107,10 @@ while($i<=2){
       </div>
    <div class="col-md-6">
         <label for="Catagory" class="form-label">Task Catagory</label>
-         <select name="Catagory" class="form-select">
+         <select name="categories" class="form-select">
           <option selected>Choose</option>
           <option>Events </option>
-          <option>HomeWork </option>
+          <option>home work</option>
           <option>Chores </option>
            <option>Health </option>
          </select>
@@ -116,7 +118,7 @@ while($i<=2){
                <div class="col-md-3">
         <label for="datedeadline" class="form-label">Task Due Date</label>
          <br>
-        <input type="date">
+        <input name="datedeadline" id= "datedeadline" type="date">
       </div>
 
      <div class="col-md-6">

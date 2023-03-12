@@ -50,18 +50,5 @@
         "reward": 20.5,
         "timeNeeded": 130,
         "categories": "project"
-    },
-    {
-        "uid": null,
-        "userUID": "102",
-        "dateStart": "d",
-        "datedeadline": "",
-        "dateComplete": null,
-        "title": "sadadasda",
-        "description": "i dont wanna be here!",
-        "staus": "created",
-        "reward": "hour of play time",
-        "timerequiered": "50",
-        "Catagory": "Health"
     }
 ]
